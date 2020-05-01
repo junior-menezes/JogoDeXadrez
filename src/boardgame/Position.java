@@ -1,38 +1,38 @@
 package boardgame;
 
 public class Position {
-	private int row;
-	private int column;
+	private int linha;
+	private int coluna;
 	
 	
-	public Position(int row, int column) {
-		this.row = row;
-		this.column = column;
+	public Position(int linha, int coluna) {
+		this.linha = linha;
+		this.coluna = coluna;
 	}
 
 
-	public int getRow() {
-		return row;
+	public int getlinha() {
+		return linha;
 	}
 
 
-	public void setRow(int row) {
-		this.row = row;
+	public void setlinha(int linha) {
+		this.linha = linha;
 	}
 
 
-	public int getColumn() {
-		return column;
+	public int getcoluna() {
+		return coluna;
 	}
 
 
-	public void setColumn(int column) {
-		this.column = column;
+	public void setcoluna(int coluna) {
+		this.coluna = coluna;
 	}
 
 
 	@Override
 	public String toString() {
-		return row + ", " + column;
+		return linha + ", " + coluna;
 	}
 }

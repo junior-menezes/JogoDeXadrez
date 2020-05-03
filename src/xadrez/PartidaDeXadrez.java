@@ -44,7 +44,7 @@ public class PartidaDeXadrez {
 	
 	private void validaPosicaoEntrada(Position position) {
 		if(!tabuleiro.existePeca(position)) {
-			throw new TabuleiroException("Não ha peça na posição de origem");
+			throw new TabuleiroException("Nao ha peca na posicao de origem");
 		}
 	}
 	

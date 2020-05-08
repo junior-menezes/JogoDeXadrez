@@ -30,10 +30,13 @@ public class PartidaDeXadrez {
 		Position entrada = entradaPosition.convertePosition();
 		Position alvo = alvoPosition.convertePosition();
 		validaPosicaoEntrada(entrada);
+		validaPosicaoAlvo(entrada, alvo);
 		Peca pecaCapiturada = fazMovimento(entrada, alvo);
 		return (PecaDeXadrez) pecaCapiturada;
 	}
 	
+	
+
 	private Peca fazMovimento(Position entrada, Position alvo) {
 		Peca p = tabuleiro.removePeca(entrada);
 		Peca pecaCapiturada = tabuleiro.removePeca(alvo);
@@ -49,6 +52,13 @@ public class PartidaDeXadrez {
 		if(!tabuleiro.peca(position).existeAlgumPossivelMovimento()) {
 			throw new XadrezException("Nao ha um movimento posssivel para essa peca. Peca travada!");
 		}
+	}
+	
+	private void validaPosicaoAlvo(Position entrada, Position alvo) {
+		if(!tabuleiro.peca(entrada).possiveisMovimento(alvo)) {
+			throw new XadrezException("A peca escolhida nao pode ser movida para esta posicao.");
+		}
+		
 	}
 	
 	private void substituiNovaPeca(char coluna, int linha, PecaDeXadrez peca) {

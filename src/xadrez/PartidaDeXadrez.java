@@ -26,7 +26,13 @@ public class PartidaDeXadrez {
 		return matrix;		
 	}
 	
-	public PecaDeXadrez movimentoXadrezPosition(XadrezPosition entradaPosition, XadrezPosition alvoPosition) {
+	public boolean[][] possiveisMovimentos(XadrezPosition entradaPosition){
+		Position position = entradaPosition.convertePosition(); //toPosition
+		validaPosicaoEntrada(position);
+		return tabuleiro.peca(position).possiveisMovimentos();
+	}
+	
+	public PecaDeXadrez movimentoXadrezPosition(XadrezPosition entradaPosition, XadrezPosition alvoPosition) { //PerformChessMove
 		Position entrada = entradaPosition.convertePosition();
 		Position alvo = alvoPosition.convertePosition();
 		validaPosicaoEntrada(entrada);
